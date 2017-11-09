@@ -71,7 +71,7 @@ class CategoryController: NSObject {
                     
                 })
 
-            }){ (message : String?,code : Int) in
+            }){ (message : String?,code : Int?) in
                 failureBlock(message, code)
             }
 

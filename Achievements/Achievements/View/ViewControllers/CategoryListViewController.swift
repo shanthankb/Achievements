@@ -20,8 +20,8 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
             //request controller for categories
             CategoryController.sharedController.fetchCategories(forGroup: parentGroup, successBlock: { (response) in
                 self.reloadView()
-            }) { (message : String?, code : Int) in
-                
+            }) { (message : String?, code : Int?) in
+                self.reloadView()
         }
     }
     }

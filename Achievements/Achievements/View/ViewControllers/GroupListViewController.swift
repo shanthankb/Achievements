@@ -26,8 +26,8 @@ class GroupListViewController : UIViewController, UITableViewDelegate, UITableVi
             
             //update view
             self.reloadView()
-        }) { (message : String?, code : Int) in
-            
+        }) { (message : String?, code : Int?) in
+            self.reloadView()
         }
     }
 

@@ -10,7 +10,7 @@ import Foundation
 import MagicalRecord
 
 typealias successBlockType = (_ response: [AnyHashable : Any]?) -> Void
-typealias failureBlockType = (_ responseString : String?, _ statusCode : Int) -> Void
+typealias failureBlockType = (_ responseString : String?, _ statusCode : Int?) -> Void
 
 let urlString = "https://api.guildwars2.com/v2/"
 
@@ -63,7 +63,7 @@ class GroupController: NSObject {
 
             })
             
-        }) { (message : String?,code : Int) in
+        }) { (message : String?,code : Int?) in
             failureBlock(message, code)
         }
     }

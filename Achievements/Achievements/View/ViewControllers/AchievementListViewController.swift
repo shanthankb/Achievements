@@ -18,8 +18,8 @@ class AchievementListViewController : UIViewController, UITableViewDelegate, UIT
         didSet{
             AchievementController.sharedController.fetchAchievements(forCategory: parentCategory, successBlock: { (response) in
                 self.reloadView()
-            }) { (message : String?, code : Int) in
-                
+            }) { (message : String?, code : Int?) in
+                self.reloadView()
             }
         }
     }

@@ -14,17 +14,23 @@ class GETRequestHelper: NSObject {
     class func fetchGroups(successBlock: @escaping successBlockType, failureBlock : @escaping failureBlockType)
     {
         Alamofire.request(urlString+"achievements/groups/")
+            .validate()
             .responseJSON { response in
                 
-            let json = response.result.value
-                if(json != nil)
-                {
-                    //print(json as! [String])
-                    GETRequestHelper.fetchDetailsFor(groups: json as! [String], successBlock : successBlock, failureBlock: failureBlock)
+                switch response.result {
+                case .success:
+                    let json = response.result.value
+                    if(json != nil)
+                    {
+                        GETRequestHelper.fetchDetailsFor(groups: json as! [String], successBlock : successBlock, failureBlock: failureBlock)
+                    }
+                    break
+                case .failure:
+                    failureBlock(nil, nil)
+                    break
+                    
                 }
         }
-        
-        //uest(urlString+"achievements/groups/", method: .get, parameters: nil, encoding: .default, headers: nil)
     }
     
     class func fetchDetailsFor(groups : [String], successBlock: @escaping successBlockType, failureBlock : failureBlockType)
@@ -34,6 +40,7 @@ class GETRequestHelper: NSObject {
         let parameters : Parameters = ["ids" : string]
         
         Alamofire.request(urlString+"achievements/groups", method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: ["Content-Type" : "application/json"])
+            .validate()
             .responseJSON { (response) in
                 var result:[AnyHashable:Any]? = nil
                 if let json = response.result.value
@@ -48,10 +55,10 @@ class GETRequestHelper: NSObject {
     
     class func fetchCategories(with ids : String?, successBlock: @escaping successBlockType, failureBlock : failureBlockType)
     {
-//        let string = (ids.map{String($0)}).joined(separator: ",")
         let parameters : Parameters = ["ids" : ids ?? ""]
         
         Alamofire.request(urlString+"achievements/categories", method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: ["Content-Type" : "application/json"])
+            .validate()
             .responseJSON { (response) in
                 var result:[AnyHashable:Any]? = nil
                 if let json = response.result.value
@@ -66,10 +73,10 @@ class GETRequestHelper: NSObject {
 
     class func fetchAchievements(with ids : String?, successBlock: @escaping successBlockType, failureBlock : failureBlockType)
     {
-//        let string = (ids.map{String($0)}).joined(separator: ",")
         let parameters : Parameters = ["ids" : ids ?? ""]
         
         Alamofire.request(urlString+"achievements", method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: ["Content-Type" : "application/json"])
+            .validate()
             .responseJSON { (response) in
                 var result:[AnyHashable:Any]? = nil
                 if let json = response.result.value
