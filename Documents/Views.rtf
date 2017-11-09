@@ -1,0 +1,57 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \
+
+\b0 Screens:\
+
+\b 1. Groups:(
+\i\b0 GroupListViewController
+\i0\b )
+\b0 \
+This is the first screen in the app. Displays all the groups provided by the content provider\
+\
+
+\b 2. Categories:(
+\i\b0 CategoryListViewController
+\i0\b )
+\b0 \
+When user selects/taps on a Group in Groups list view, user will be taken to this screen. Displays all the categories inside a Group\
+\
+
+\b 3. Achievements:(
+\i\b0 AchievementListViewController
+\i0\b )
+\b0 \
+When user selects/taps on a Category in Categories list view, user will be taken to this screen. List of all the achievements under a user selected Category\
+\
+
+\b 4. Achievement Details:(
+\i\b0 AchievementDetailsViewController
+\i0\b )
+\b0 \
+When user selects/taps on an Achievement in Achievements list view, user will be taken to this screen. Displays details of an user selected achievement\
+\
+\
+
+\b Application Flow: (Ref. Wireframe image)\
+\
+
+\b0 Application is 
+\b navigation based
+\b0 , where user can navigate to any screens and come back to previous screens in the navigation stack.\
+\
+Why Navigation based flow:\
+1. user can dig through the details of the data such as Group, Category and Achievement\
+2. data models and the screen flow are hierarchically related \
+3. user will have clear understanding of the data he/she is viewing \
+4. above all, for the current requirement navigation based flow is the simplest and clear design option for implementation\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\i \cf0 GroupListViewController ->  CategoryListViewController ->  AchievementListViewController ->  AchievementDetailsViewController\
+}

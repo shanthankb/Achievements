@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\i\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\i0\b \cf0 Controller classes to handle business logic:
+\b0 \
+\
+APIs response shows Achievement is part of Category(
+\i assumption an Achievement cannot exist without a Category
+\i0 ). And Category is part of Group(
+\i assumption is a Category cannot exists independent of a Group
+\i0 ).\
+\
+
+\b First
+\b0  approach to have business logic is to have GroupController who manages Group objects operations like Create, Insert, Update, Delete etc., As Category is part of Group, we can make a Group object itself as CategoryController. That means all Category related operations will be managed by the respective Group object. Similarly for Achievement and Category. This approach enhances reusability, but makes modules tightly coupled to each other.\
+\
+
+\b Second
+\b0  approach is to have separate business logic controller for each of them, who are less tightly coupled, but we may end up having more controller classes. This solution makes sure that each controller is managing a specific responsibility and thus keeps the size of each controller as minimum as possible. Also this helps in writing effective unit test cases.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\i \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\i0 \cf0 I prefer 
+\b Second 
+\b0 approach/solution for this application. With that we will have three major controllers/ business logic centers who will manage/handle a particular object. In our application for current requirement we need 
+\b GroupController
+\b0 , 
+\b CategoryController
+\b0  and an 
+\b AchievementController
+\b0 , who will help in managing Group, Category and Achievement objects respectively.\
+\
+For 
+\b Tier
+\b0 , 
+\b Reward
+\b0  and 
+\b Bit
+\b0  objects no need to have separate Controller, 
+\b Achievement
+\b0  object can be given with little extra responsibility to manage these objects.\
+}
