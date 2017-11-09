@@ -72,7 +72,10 @@ class GroupController: NSObject {
     {
         let context = NSManagedObjectContext.mr_default()
         let groups = Group.mr_findAll(in: context) as? [Group]
-        return groups
+        let sortedGroups = groups?.sorted(by: { (groupOne: Group, groupTwo:Group) -> Bool in
+            return groupOne.order < groupTwo.order
+        })
+        return sortedGroups
     }
     
     func group(with id : String?) -> Group?
