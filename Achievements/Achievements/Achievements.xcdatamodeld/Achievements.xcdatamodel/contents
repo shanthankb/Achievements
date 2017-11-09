@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Achievement" representedClassName=".Achievement" syncable="YES">
+        <attribute name="achievementDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lockedText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pointCap" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prerequisites" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="requirement" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bits" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Bit" inverseName="achievement" inverseEntity="Bit" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="achievements" inverseEntity="Category" syncable="YES"/>
+        <relationship name="rewards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reward" inverseName="achievement" inverseEntity="Reward" syncable="YES"/>
+        <relationship name="tiers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tier" inverseName="achievement" inverseEntity="Tier" syncable="YES"/>
+    </entity>
+    <entity name="Bit" representedClassName=".Bit" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="achievement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Achievement" inverseName="bits" inverseEntity="Achievement" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="achievementIDs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="categoryDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="achievements" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Achievement" inverseName="category" inverseEntity="Achievement" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="categories" inverseEntity="Group" syncable="YES"/>
+    </entity>
+    <entity name="Group" representedClassName=".Group" syncable="YES">
+        <attribute name="categoryIDs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Category" inverseName="group" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <entity name="Reward" representedClassName=".Reward" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="achievement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Achievement" inverseName="rewards" inverseEntity="Achievement" syncable="YES"/>
+    </entity>
+    <entity name="Tier" representedClassName=".Tier" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="achievement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Achievement" inverseName="tiers" inverseEntity="Achievement" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Achievement" positionX="43" positionY="-324" width="128" height="253"/>
+        <element name="Bit" positionX="-153" positionY="27" width="128" height="103"/>
+        <element name="Category" positionX="-162" positionY="-330" width="128" height="163"/>
+        <element name="Group" positionX="-351" positionY="-324" width="128" height="135"/>
+        <element name="Reward" positionX="16" positionY="42" width="128" height="118"/>
+        <element name="Tier" positionX="169" positionY="18" width="128" height="88"/>
+    </elements>
+</model>
