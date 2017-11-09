@@ -45,7 +45,7 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
     func reloadView()
     {
         let group = GroupController.sharedController.group(with: parentGroup?.id)
-        self.categoryList = group?.categories?.allObjects as? [Category]
+        self.categoryList = group?.sortedCategories()
         self.listView.reloadData()
     }
     

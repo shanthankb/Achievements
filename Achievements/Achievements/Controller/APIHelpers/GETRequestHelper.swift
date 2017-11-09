@@ -69,7 +69,7 @@ class GETRequestHelper: NSObject {
                 var result:[AnyHashable:Any]? = nil
                 if let json = response.result.value
                 {
-                    //print(json)
+                    print(json)
                     result = ["result" : json]
                 }
                 

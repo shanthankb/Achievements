@@ -22,6 +22,15 @@ extension Group {
     @NSManaged public var order: Int16
     @NSManaged public var categoryIDs: String?
     @NSManaged public var categories: NSSet?
+    
+    public func sortedCategories() -> [Category]?
+    {
+        let unsortedCategories = categories?.allObjects as? [Category]
+        let sortedCategories = unsortedCategories?.sorted(by: { (categoryOne: Category, categoryTwo : Category) -> Bool in
+            return categoryOne.order < categoryTwo.order
+        })
+        return sortedCategories
+    }
 
 }
 
