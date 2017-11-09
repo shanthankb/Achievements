@@ -32,6 +32,8 @@ class AchievementController: NSObject {
                         let result = response!["result"] as! NSArray
                         var achievements : [Achievement] = []
                         
+                        let tempCategory = Category.mr_findFirst(with: NSPredicate(format:"id = %d",category!.id), in: inContext)
+
                         for achievementInfo in result{
                             let achievementInfoDictionary = (achievementInfo as! [String : AnyObject])
                             let id = achievementInfoDictionary["id"] as! Int16
@@ -57,12 +59,8 @@ class AchievementController: NSObject {
                             
                             //Tier, Bit and Reward objects can be created here for Achievements
                             
-                            achievements.append(achievement!)
+                            tempCategory!.addToAchievements(achievement!)
                         }
-                        
-                        let tempCategory = Category.mr_findFirst(with: NSPredicate(format:"id = %d",category!.id), in: inContext)
-                        //update category with achievements
-                        tempCategory!.achievements = NSSet(array: achievements)
                     }
                     
                 }, completion: { (state : Bool, error : Error?) in

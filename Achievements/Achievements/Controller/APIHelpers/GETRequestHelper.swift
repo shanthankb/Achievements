@@ -9,11 +9,17 @@
 import Foundation
 import Alamofire
 
+let groupsAPI = "achievements/groups"
+let catagoriesAPI = "achievements/categories"
+let achievementsAPI = "achievements"
+let contentType = "Content-Type"
+let applicationJSON = "application/json"
+
 class GETRequestHelper: NSObject {
     
     class func fetchGroups(successBlock: @escaping successBlockType, failureBlock : @escaping failureBlockType)
     {
-        Alamofire.request(urlString+"achievements/groups/")
+        Alamofire.request(urlString+groupsAPI)
             .validate()
             .responseJSON { response in
                 
@@ -39,7 +45,7 @@ class GETRequestHelper: NSObject {
 
         let parameters : Parameters = ["ids" : string]
         
-        Alamofire.request(urlString+"achievements/groups", method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: ["Content-Type" : "application/json"])
+        Alamofire.request(urlString+groupsAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
             .validate()
             .responseJSON { (response) in
                 var result:[AnyHashable:Any]? = nil
@@ -57,7 +63,7 @@ class GETRequestHelper: NSObject {
     {
         let parameters : Parameters = ["ids" : ids ?? ""]
         
-        Alamofire.request(urlString+"achievements/categories", method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: ["Content-Type" : "application/json"])
+        Alamofire.request(urlString+catagoriesAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
             .validate()
             .responseJSON { (response) in
                 var result:[AnyHashable:Any]? = nil
@@ -75,7 +81,7 @@ class GETRequestHelper: NSObject {
     {
         let parameters : Parameters = ["ids" : ids ?? ""]
         
-        Alamofire.request(urlString+"achievements", method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: ["Content-Type" : "application/json"])
+        Alamofire.request(urlString+achievementsAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
             .validate()
             .responseJSON { (response) in
                 var result:[AnyHashable:Any]? = nil
