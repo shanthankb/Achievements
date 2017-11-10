@@ -11,10 +11,13 @@ import MagicalRecord
 
 class CategoryController: NSObject {
     
-    static let sharedController = CategoryController()
-    
-    private override init() {
-    }
+    //singleton instance helps when we are maintaining a state of the application
+    //For current requirement we do not need singleton design pattern.
+
+//    static let sharedController = CategoryController()
+//    
+//    private override init() {
+//    }
     
     func fetchCategories(forGroup group : Group?, successBlock : @escaping successBlockType, failureBlock : @escaping failureBlockType)
     {

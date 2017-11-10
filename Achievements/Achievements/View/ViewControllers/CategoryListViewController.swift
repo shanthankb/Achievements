@@ -18,7 +18,9 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
     var parentGroup : Group? {
         didSet{
             //request controller for categories
-            CategoryController.sharedController.fetchCategories(forGroup: parentGroup, successBlock: { (response) in
+//            CategoryController.sharedController.fetchCategories(forGroup: parentGroup, successBlock: { (response) in
+            
+            CategoryController().fetchCategories(forGroup: parentGroup, successBlock: { (response) in
                 self.reloadView()
             }) { (message : String?, code : Int?) in
                 self.reloadView()
@@ -44,7 +46,9 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
     
     func reloadView()
     {
-        let group = GroupController.sharedController.group(with: parentGroup?.id)
+//        let group = GroupController.sharedController.group(with: parentGroup?.id)
+        let group = GroupController().group(with: parentGroup?.id)
+
         self.categoryList = group?.sortedCategories()
         self.listView.reloadData()
     }

@@ -16,10 +16,13 @@ let urlString = "https://api.guildwars2.com/v2/"
 
 class GroupController: NSObject {
     
-    static let sharedController = GroupController()
+    //singleton instance helps when we are maintaining a state of the application
+    //For current requirement we do not need singleton design pattern. 
     
-    private override init() {
-    }
+//    static let sharedController = GroupController()
+//    
+//    private override init() {
+//    }
     
     func fetchGroups(successBlock : @escaping successBlockType, failureBlock : @escaping failureBlockType)
     {

@@ -12,10 +12,13 @@ import MagicalRecord
 
 class AchievementController: NSObject {
     
-    static let sharedController = AchievementController()
-    
-    private override init() {
-    }
+    //singleton instance helps when we are maintaining a state of the application
+    //For current requirement we do not need singleton design pattern.
+
+//    static let sharedController = AchievementController()
+//    
+//    private override init() {
+//    }
     
     func fetchAchievements(forCategory category : Category?, successBlock : @escaping successBlockType, failureBlock : @escaping failureBlockType)
     {

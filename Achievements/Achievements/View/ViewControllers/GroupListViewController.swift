@@ -22,8 +22,8 @@ class GroupListViewController : UIViewController, UITableViewDelegate, UITableVi
     
     func viewControllerWillLoad() {
         //request controller for group data
-        GroupController.sharedController.fetchGroups(successBlock: { (response) in
-            
+//        GroupController.sharedController.fetchGroups(successBlock: { (response) in
+        GroupController().fetchGroups(successBlock: { (response) in
             //update view
             self.reloadView()
         }) { (message : String?, code : Int?) in
@@ -33,7 +33,8 @@ class GroupListViewController : UIViewController, UITableViewDelegate, UITableVi
 
     func reloadView()
     {
-        groupList = GroupController.sharedController.groups()
+//        groupList = GroupController.sharedController.groups()
+        groupList = GroupController().groups()
         self.listView.reloadData()
     }
     

@@ -16,7 +16,9 @@ class AchievementListViewController : UIViewController, UITableViewDelegate, UIT
     
     var parentCategory : Category? {
         didSet{
-            AchievementController.sharedController.fetchAchievements(forCategory: parentCategory, successBlock: { (response) in
+//            AchievementController.sharedController.fetchAchievements(forCategory: parentCategory, successBlock: { (response) in
+            
+            AchievementController().fetchAchievements(forCategory: parentCategory, successBlock: { (response) in
                 self.reloadView()
             }) { (message : String?, code : Int?) in
                 self.reloadView()
@@ -39,7 +41,8 @@ class AchievementListViewController : UIViewController, UITableViewDelegate, UIT
     
     func reloadView()
     {
-        let category = CategoryController.sharedController.category(with: parentCategory?.id)
+//        let category = CategoryController.sharedController.category(with: parentCategory?.id)
+        let category = CategoryController().category(with: parentCategory?.id)
         achievementList = category?.achievements?.allObjects as? [Achievement]
         listView.reloadData()
     }
