@@ -113,6 +113,54 @@
             endingLineNumber = "22"
             landmarkName = "parentGroup"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Achievements.CategoryListViewController.parentGroup.didset : Swift.Optional&lt;Achievements.Group&gt;"
+                  moduleName = "Achievements"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shanthan/Desktop/Test/SolCen/Achievements/Achievements/View/ViewControllers/CategoryListViewController.swift"
+                  timestampString = "531983433.948064"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Achievements.CategoryListViewController.(parentGroup.didset : Swift.Optional&lt;Achievements.Group&gt;).(closure #1)"
+                  moduleName = "Achievements"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shanthan/Desktop/Test/SolCen/Achievements/Achievements/View/ViewControllers/CategoryListViewController.swift"
+                  timestampString = "531983433.949557"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Achievements/Controller/APIHelpers/GETRequestHelper.swift"
+            timestampString = "531983992.293401"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "fetchGroups(successBlock:failureBlock:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

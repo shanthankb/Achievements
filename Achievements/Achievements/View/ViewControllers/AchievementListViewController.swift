@@ -44,7 +44,7 @@ class AchievementListViewController : UIViewController, UITableViewDelegate, UIT
 //        let category = CategoryController.sharedController.category(with: parentCategory?.id)
         let category = CategoryController().category(with: parentCategory?.id)
         achievementList = category?.achievements?.allObjects as? [Achievement]
-        listView.reloadData()
+        listView?.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

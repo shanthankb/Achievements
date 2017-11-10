@@ -35,7 +35,7 @@ class GroupListViewController : UIViewController, UITableViewDelegate, UITableVi
     {
 //        groupList = GroupController.sharedController.groups()
         groupList = GroupController().groups()
-        self.listView.reloadData()
+        self.listView?.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -50,7 +50,7 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
         let group = GroupController().group(with: parentGroup?.id)
 
         self.categoryList = group?.sortedCategories()
-        self.listView.reloadData()
+        self.listView?.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

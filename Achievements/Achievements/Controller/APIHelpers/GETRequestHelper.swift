@@ -19,80 +19,111 @@ class GETRequestHelper: NSObject {
     
     class func fetchGroups(successBlock: @escaping successBlockType, failureBlock : @escaping failureBlockType)
     {
-        Alamofire.request(urlString+groupsAPI)
-            .validate()
-            .responseJSON { response in
-                
-                switch response.result {
-                case .success:
-                    let json = response.result.value
-                    if(json != nil)
-                    {
-                        GETRequestHelper.fetchDetailsFor(groups: json as! [String], successBlock : successBlock, failureBlock: failureBlock)
-                    }
-                    break
-                case .failure:
-                    failureBlock(nil, nil)
-                    break
+        //checking reachability before making network call
+        if Alamofire.NetworkReachabilityManager()?.isReachable == true {
+            Alamofire.request(urlString+groupsAPI)
+                .validate()
+                .responseJSON { response in
                     
-                }
+                    switch response.result {
+                    case .success:
+                        let json = response.result.value
+                        if(json != nil)
+                        {
+                            GETRequestHelper.fetchDetailsFor(groups: json as! [String], successBlock : successBlock, failureBlock: failureBlock)
+                        }
+                        break
+                    case .failure:
+                        failureBlock(nil, nil)
+                        break
+                        
+                    }
+            }
+        }
+        else
+        {
+            failureBlock(nil, nil)
         }
     }
     
     class func fetchDetailsFor(groups : [String], successBlock: @escaping successBlockType, failureBlock : failureBlockType)
     {
-        let string = groups.joined(separator: ",")
-
-        let parameters : Parameters = ["ids" : string]
-        
-        Alamofire.request(urlString+groupsAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
-            .validate()
-            .responseJSON { (response) in
-                var result:[AnyHashable:Any]? = nil
-                if let json = response.result.value
-                {
-                    //print(json)
-                     result = ["result" : json]
-                }
-                
-                successBlock(result)
+        //checking reachability before making network call
+        if Alamofire.NetworkReachabilityManager()?.isReachable == true {
+            
+            let string = groups.joined(separator: ",")
+            
+            let parameters : Parameters = ["ids" : string]
+            
+            Alamofire.request(urlString+groupsAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
+                .validate()
+                .responseJSON { (response) in
+                    var result:[AnyHashable:Any]? = nil
+                    if let json = response.result.value
+                    {
+                        //print(json)
+                        result = ["result" : json]
+                    }
+                    
+                    successBlock(result)
+            }
+        }
+        else
+        {
+            failureBlock(nil, nil)
         }
     }
     
     class func fetchCategories(with ids : String?, successBlock: @escaping successBlockType, failureBlock : failureBlockType)
     {
-        let parameters : Parameters = ["ids" : ids ?? ""]
-        
-        Alamofire.request(urlString+catagoriesAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
-            .validate()
-            .responseJSON { (response) in
-                var result:[AnyHashable:Any]? = nil
-                if let json = response.result.value
-                {
-                    print(json)
-                    result = ["result" : json]
-                }
-                
-                successBlock(result)
+        //checking reachability before making network call
+        if Alamofire.NetworkReachabilityManager()?.isReachable == true {
+            
+            let parameters : Parameters = ["ids" : ids ?? ""]
+            
+            Alamofire.request(urlString+catagoriesAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
+                .validate()
+                .responseJSON { (response) in
+                    var result:[AnyHashable:Any]? = nil
+                    if let json = response.result.value
+                    {
+                        print(json)
+                        result = ["result" : json]
+                    }
+                    
+                    successBlock(result)
+            }
         }
+        else
+        {
+            failureBlock(nil, nil)
+        }
+        
     }
-
     class func fetchAchievements(with ids : String?, successBlock: @escaping successBlockType, failureBlock : failureBlockType)
     {
-        let parameters : Parameters = ["ids" : ids ?? ""]
-        
-        Alamofire.request(urlString+achievementsAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
-            .validate()
-            .responseJSON { (response) in
-                var result:[AnyHashable:Any]? = nil
-                if let json = response.result.value
-                {
-                    //print(json)
-                    result = ["result" : json]
-                }
-                
-                successBlock(result)
+        //checking reachability before making network call
+        if Alamofire.NetworkReachabilityManager()?.isReachable == true {
+            
+            let parameters : Parameters = ["ids" : ids ?? ""]
+            
+            Alamofire.request(urlString+achievementsAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
+                .validate()
+                .responseJSON { (response) in
+                    var result:[AnyHashable:Any]? = nil
+                    if let json = response.result.value
+                    {
+                        //print(json)
+                        result = ["result" : json]
+                    }
+                    
+                    successBlock(result)
+            }
+            
+        }
+        else
+        {
+            failureBlock(nil, nil)
         }
     }
-
 }
