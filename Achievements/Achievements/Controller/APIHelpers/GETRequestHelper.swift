@@ -119,7 +119,6 @@ class GETRequestHelper: NSObject {
                     
                     successBlock(result)
             }
-            
         }
         else
         {

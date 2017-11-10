@@ -16,12 +16,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var rootViewController : UINavigationController?
-
+    let networkManager = Alamofire.NetworkReachabilityManager(host: "www.apple.com")
+    var networkReachabilityMsgView : UILabel?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         MagicalRecord.setupCoreDataStack(withStoreNamed: "Achievements")
+        
+        
+        //Tested reachability status change on simulator it seems to be buggy, 'listener' will get called sometime and sometime not. There are many threads on Alamofire forum regarding this issue. Need to work on this.
+        //___________________________________________________________
+        networkReachabilityMsgView = UILabel(frame: CGRect(x: 0, y : 15,width : window!.frame.size.width, height : 20))
+        networkReachabilityMsgView!.text = "Network not reachable!"
+        networkReachabilityMsgView!.font = UIFont(name: "Helvetica", size: 12.0)
+        //        networkReachabilityMsgView.alpha = 0.8
+        networkReachabilityMsgView!.textAlignment = NSTextAlignment.center
+        networkReachabilityMsgView!.isUserInteractionEnabled = false
+        networkReachabilityMsgView!.textColor = UIColor.lightGray
+        networkReachabilityMsgView!.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        networkReachabilityMsgView!.tag = 111
+        window!.addSubview(networkReachabilityMsgView!)
 
+        networkManager?.listener = {[weak self] status in
+            
+            switch status {
+            case .notReachable:
+            //Show error state
+                self?.window!.bringSubview(toFront: (self?.networkReachabilityMsgView)!)
+//                self?.networkReachabilityMsgView!.text = "Network not reachable!"
+                
+                break
+            case .reachable(_), .unknown:
+                //Hide error state
+                self?.window!.sendSubview(toBack: (self?.networkReachabilityMsgView)!)
+//                self?.networkReachabilityMsgView!.text = ""
+
+                break
+            }
+
+            self?.window!.setNeedsLayout()
+        }
+
+        _ = networkManager?.startListening()
+        //___________________________________________________________
+
+        
+        
         rootViewController = UINavigationController()
         self.window?.rootViewController = rootViewController
         
