@@ -21,6 +21,10 @@ class AchievementDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //we can use googleicon.ttf font for image
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "left.png"), style: .plain, target: self, action: #selector(backButtonClicked))
+
         self.navigationItem.title = "Achievement"//achievement?.name
         self.nameLabel.text = achievement?.name
         self.typeLabel.text = achievement?.type
@@ -30,5 +34,10 @@ class AchievementDetailViewController: UIViewController {
         
         self.pictureView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "PlaceHolderImage.png"))
 
+    }
+    
+    func backButtonClicked()
+    {
+        self.navigationController?.popViewController(animated: true)
     }
 }
