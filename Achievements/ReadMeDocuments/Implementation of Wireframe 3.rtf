@@ -1,0 +1,38 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;}
+\margl1440\margr1440\vieww12820\viewh13220\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 Implementation details of Wireframe 3:
+\b0\fs24 \
+\
+
+\b Existing application:
+\b0 \
+Current application fetches the data only when it is needed. That mean, initially only Groups are fetched from the server. Then when user selects a Group that particular Group information(categories) are fetched. And similar is the case with Categories. \
+Advantages of this approach:\
+\
+1. Load data on demand\
+2. Avoids fetching of data which is not required for user\
+3. Data fetch will be effective, fast and efficient\
+\
+
+\b According to Wireframe 3:
+\b0 \
+\
+If we implement according to wireframe 3, we have to fetch all the data from server at the time of launch. Because, first screen has information related to Groups and Achievements. As Achievements are not directly linked to Groups, to get Achievement information first we have to fetch Group, Category and then Achievement.  \
+\
+Advantages of this approach:\
+1. All the data will be fetched at the launch time\
+2. As complete data available, user need not be connected to internet all the time\
+\
+Disadvantages:\
+1. Initial fetch operation may go longer\
+2. User may not be interested in all the data \
+3. Data on the screen may not be latest/updated one\
+4. To avoid above scenario (mentioned in 3rd point) we are force to refetch data on demand from server  \
+5. Point 3 and 4 results in unnecessary bandwidth consumption\
+\
+}
