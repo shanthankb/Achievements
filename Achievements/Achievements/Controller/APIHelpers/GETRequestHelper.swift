@@ -9,11 +9,11 @@
 import Foundation
 import Alamofire
 
-let groupsAPI = "achievements/groups"
-let catagoriesAPI = "achievements/categories"
-let achievementsAPI = "achievements"
-let contentType = "Content-Type"
-let applicationJSON = "application/json"
+//let groupsAPI = "achievements/groups"
+//let catagoriesAPI = "achievements/categories"
+//let achievementsAPI = "achievements"
+//let contentType = "Content-Type"
+//let applicationJSON = "application/json"
 
 class GETRequestHelper: NSObject {
     
@@ -21,7 +21,7 @@ class GETRequestHelper: NSObject {
     {
         //checking reachability before making network call
         if Alamofire.NetworkReachabilityManager()?.isReachable == true {
-            Alamofire.request(urlString+groupsAPI)
+            Alamofire.request(Constants.URLs.BaseURL+Constants.URLs.GroupsAPI)
                 .validate()
                 .responseJSON { response in
                     
@@ -55,7 +55,7 @@ class GETRequestHelper: NSObject {
             
             let parameters : Parameters = ["ids" : string]
             
-            Alamofire.request(urlString+groupsAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
+            Alamofire.request((Constants.URLs.BaseURL+Constants.URLs.GroupsAPI), method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [Constants.KEYs.ContentType : Constants.KEYs.ApplicationJSON])
                 .validate()
                 .responseJSON { (response) in
                     var result:[AnyHashable:Any]? = nil
@@ -81,7 +81,7 @@ class GETRequestHelper: NSObject {
             
             let parameters : Parameters = ["ids" : ids ?? ""]
             
-            Alamofire.request(urlString+catagoriesAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
+            Alamofire.request(Constants.URLs.BaseURL+Constants.URLs.CatagoriesAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [Constants.KEYs.ContentType : Constants.KEYs.ApplicationJSON])
                 .validate()
                 .responseJSON { (response) in
                     var result:[AnyHashable:Any]? = nil
@@ -107,7 +107,7 @@ class GETRequestHelper: NSObject {
             
             let parameters : Parameters = ["ids" : ids ?? ""]
             
-            Alamofire.request(urlString+achievementsAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [contentType : applicationJSON])
+            Alamofire.request(Constants.URLs.BaseURL+Constants.URLs.AchievementsAPI, method: .get, parameters: parameters, encoding: URLEncoding.methodDependent, headers: [Constants.KEYs.ContentType : Constants.KEYs.ApplicationJSON])
                 .validate()
                 .responseJSON { (response) in
                     var result:[AnyHashable:Any]? = nil

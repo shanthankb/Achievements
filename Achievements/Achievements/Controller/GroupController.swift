@@ -12,7 +12,6 @@ import MagicalRecord
 typealias successBlockType = (_ response: [AnyHashable : Any]?) -> Void
 typealias failureBlockType = (_ responseString : String?, _ statusCode : Int?) -> Void
 
-let urlString = "https://api.guildwars2.com/v2/"
 
 class GroupController: NSObject {
     
@@ -33,10 +32,10 @@ class GroupController: NSObject {
                 
                 if response != nil
                 {
-                    let result = response!["result"] as! NSArray
+                    let result = response![Constants.KEYs.Result] as! NSArray
                     for groupInfo in result{
                         let groupInfoDictionary = (groupInfo as! [String : AnyObject])
-                        let id = groupInfoDictionary["id"] as! String
+                        let id = groupInfoDictionary[Constants.KEYs.Id] as! String
                         
                         let groups = Group.mr_findAll(with: NSPredicate(format: "id = %@",id), in: inContext) as? [Group]
                         
@@ -51,11 +50,11 @@ class GroupController: NSObject {
                         }
                         
                         group!.id = id
-                        group!.name = groupInfoDictionary["name"] as? String
-                        group!.order = groupInfoDictionary["order"] as! Int16
-                        group!.groupDescription = groupInfoDictionary["description"] as? String
+                        group!.name = groupInfoDictionary[Constants.KEYs.Name] as? String
+                        group!.order = groupInfoDictionary[Constants.KEYs.Order] as! Int16
+                        group!.groupDescription = groupInfoDictionary[Constants.KEYs.Description] as? String
                         
-                        let groupCategories = groupInfoDictionary["categories"]
+                        let groupCategories = groupInfoDictionary[Constants.KEYs.Categories]
                         //saving category ids as string
                         let categoryIDs = ((groupCategories as! [Int16]).map{String(describing: $0)}).joined(separator: ",")
                         group!.categoryIDs = categoryIDs

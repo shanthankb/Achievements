@@ -30,13 +30,13 @@ class CategoryController: NSObject {
                 context.mr_save({ (inContext : NSManagedObjectContext) in
                     if response != nil
                     {
-                        let result = response!["result"] as! NSArray
+                        let result = response![Constants.KEYs.Result] as! NSArray
 //                        var categories : [Category] = []
                         let tempGroup = Group.mr_findFirst(with: NSPredicate(format:"id = %@",group!.id!), in: inContext)
 
                         for categoryInfo in result{
                             let categoryInfoDictionary = (categoryInfo as! [String : AnyObject])
-                            let id = categoryInfoDictionary["id"] as! Int16
+                            let id = categoryInfoDictionary[Constants.KEYs.Id] as! Int16
                             
                             let storedCategories = Category.mr_findAll(with: NSPredicate(format: "id = %d",id), in: inContext) as? [Category]
                             
@@ -51,12 +51,12 @@ class CategoryController: NSObject {
                             }
                             
                             category!.id = id
-                            category!.name = categoryInfoDictionary["name"] as? String
-                            category!.order = categoryInfoDictionary["order"] as! Int16
-                            category!.categoryDescription = categoryInfoDictionary["description"] as? String
-                            category!.icon = categoryInfoDictionary["icon"] as? String
+                            category!.name = categoryInfoDictionary[Constants.KEYs.Name] as? String
+                            category!.order = categoryInfoDictionary[Constants.KEYs.Order] as! Int16
+                            category!.categoryDescription = categoryInfoDictionary[Constants.KEYs.Description] as? String
+                            category!.icon = categoryInfoDictionary[Constants.KEYs.Icon] as? String
                             
-                            let categoryAchievements = categoryInfoDictionary["achievements"]
+                            let categoryAchievements = categoryInfoDictionary[Constants.KEYs.Achievements]
                             
                             let achivementIDs = ((categoryAchievements as! [Int16]).map{String(describing: $0)}).joined(separator: ",")
                             

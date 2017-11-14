@@ -63,7 +63,7 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : ImageAndDetailsTableViewCell!
-        cell  = listView.dequeueReusableCell(withIdentifier: "ImageAndDetailsTableViewCell") as? ImageAndDetailsTableViewCell
+        cell  = listView.dequeueReusableCell(withIdentifier: Constants.View.ImageAndDetailsTableViewCell) as? ImageAndDetailsTableViewCell
         
         cell.titleLabel.text = categoryList![indexPath.row].name
         cell.descriptionLabel.text = categoryList![indexPath.row].categoryDescription
@@ -73,8 +73,8 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Achievement", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "AchievementListViewController") as! AchievementListViewController
+        let storyboard = UIStoryboard(name: Constants.Storyboard.Achievement, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: Constants.View.AchievementListViewController) as! AchievementListViewController
         viewController.parentCategory = categoryList![indexPath.row]
         self.navigationController?.pushViewController(viewController, animated: true)
         

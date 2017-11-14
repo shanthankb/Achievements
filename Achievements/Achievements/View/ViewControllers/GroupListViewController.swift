@@ -16,7 +16,7 @@ class GroupListViewController : UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Groups"
+        self.navigationItem.title = Constants.ScreenTitle.Groups
         self.navigationItem.leftBarButtonItem?.title = ""
     }
     
@@ -48,15 +48,15 @@ class GroupListViewController : UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : TitleAndDescriptionTableViewCell!
-        cell  = listView.dequeueReusableCell(withIdentifier: "TitleAndDescriptionTableViewCell") as? TitleAndDescriptionTableViewCell
+        cell  = listView.dequeueReusableCell(withIdentifier: Constants.View.TitleAndDescriptionTableViewCell) as? TitleAndDescriptionTableViewCell
         cell.titleLabel.text = groupList![indexPath.row].name
         cell.descriptionLabel.text = groupList![indexPath.row].groupDescription
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Category", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "CategoryListViewController") as! CategoryListViewController
+        let storyboard = UIStoryboard(name: Constants.Storyboard.Category, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: Constants.View.CategoryListViewController) as! CategoryListViewController
         viewController.parentGroup = groupList![indexPath.row]
         self.navigationController?.pushViewController(viewController, animated: true)
 

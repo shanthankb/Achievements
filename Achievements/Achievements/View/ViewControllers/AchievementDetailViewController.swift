@@ -25,7 +25,7 @@ class AchievementDetailViewController: UIViewController {
         //we can use googleicon.ttf font for image
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "left.png"), style: .plain, target: self, action: #selector(backButtonClicked))
 
-        self.navigationItem.title = "Achievement"//achievement?.name
+        self.navigationItem.title = Constants.ScreenTitle.Achievement//achievement?.name
         self.nameLabel.text = achievement?.name
         self.typeLabel.text = achievement?.type
         self.descriptionView.text = achievement?.achievementDescription
