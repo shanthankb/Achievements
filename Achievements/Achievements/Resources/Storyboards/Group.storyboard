@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TitleAndDescriptionTableViewCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TitleAndDescriptionTableViewCell" rowHeight="66" id="HeV-Ja-u1l" customClass="TitleAndDescriptionTableViewCell" customModule="Achievements">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TitleAndDescriptionTableViewCell" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TitleAndDescriptionTableViewCell" rowHeight="66" id="HeV-Ja-u1l" customClass="TitleAndDescriptionTableViewCell" customModule="Achievements">
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HeV-Ja-u1l" id="dVD-Do-Tog">
