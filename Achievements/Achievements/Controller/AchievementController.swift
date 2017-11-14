@@ -44,7 +44,7 @@ class AchievementController: NSObject {
                             let storedAchievements = Achievement.mr_findAll(with: NSPredicate(format: "id = %d",id), in: inContext) as? [Achievement]
                             
                             var achievement : Achievement?
-                            if (storedAchievements != nil && storedAchievements!.count > 0)
+                            if (storedAchievements != nil && storedAchievements!.isEmpty == false)
                             {
                                 achievement = storedAchievements![0]
                             }

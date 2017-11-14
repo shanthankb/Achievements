@@ -41,7 +41,7 @@ class CategoryController: NSObject {
                             let storedCategories = Category.mr_findAll(with: NSPredicate(format: "id = %d",id), in: inContext) as? [Category]
                             
                             var category : Category?
-                            if (storedCategories != nil && storedCategories!.count > 0)
+                            if (storedCategories != nil && storedCategories!.isEmpty == false)
                             {
                                 category = storedCategories![0]
                             }

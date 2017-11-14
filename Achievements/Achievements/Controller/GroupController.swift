@@ -41,7 +41,7 @@ class GroupController: NSObject {
                         let groups = Group.mr_findAll(with: NSPredicate(format: "id = %@",id), in: inContext) as? [Group]
                         
                         var group : Group?
-                        if (groups != nil && groups!.count > 0)
+                        if (groups != nil && groups!.isEmpty == false)
                         {
                             group = groups![0]
                         }
