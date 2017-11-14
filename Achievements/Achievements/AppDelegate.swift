@@ -16,20 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var rootViewController : UINavigationController?
-    let networkManager = Alamofire.NetworkReachabilityManager(host: "www.apple.com")
+    let networkManager = Alamofire.NetworkReachabilityManager(host: Constants.URLs.ReachabilityHostURL)
     var networkReachabilityMsgView : UILabel?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        MagicalRecord.setupCoreDataStack(withStoreNamed: "Achievements")
+        MagicalRecord.setupCoreDataStack(withStoreNamed: Constants.CoreData.Achievements)
         
         
         //Tested reachability status change on simulator it seems to be buggy, 'listener' will get called sometime and sometime not. There are many threads on Alamofire forum regarding this issue. Need to work on this.
         //___________________________________________________________
         networkReachabilityMsgView = UILabel(frame: CGRect(x: 0, y : 15,width : window!.frame.size.width, height : 20))
-        networkReachabilityMsgView!.text = "Network not reachable!"
-        networkReachabilityMsgView!.font = UIFont(name: "Helvetica", size: 12.0)
+        networkReachabilityMsgView!.text = NSLocalizedString(Constants.NetworkError.NetworkNotReachable, comment: "Network not reachable!")
+        networkReachabilityMsgView!.font = UIFont(name: Constants.Font.Helvetica, size: 12.0)
         //        networkReachabilityMsgView.alpha = 0.8
         networkReachabilityMsgView!.textAlignment = NSTextAlignment.center
         networkReachabilityMsgView!.isUserInteractionEnabled = false
@@ -140,8 +140,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func showGroupList()
     {
-        let storyboard = UIStoryboard(name: "Group", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "GroupListViewController") as! GroupListViewController
+        let storyboard = UIStoryboard(name: Constants.Storyboard.Group, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: Constants.View.GroupListViewController) as! GroupListViewController
         viewController.viewControllerWillLoad()
         self.rootViewController!.setViewControllers([viewController], animated: true)
         

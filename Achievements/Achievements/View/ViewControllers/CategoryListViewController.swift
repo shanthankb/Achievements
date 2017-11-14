@@ -33,7 +33,7 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
         self.navigationItem.title = parentGroup?.name
         
         //we can use googleicon.ttf font for image
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "left.png"), style: .plain, target: self, action: #selector(backButtonClicked))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Left"), style: .plain, target: self, action: #selector(backButtonClicked))
     }
     
     func backButtonClicked()

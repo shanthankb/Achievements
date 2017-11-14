@@ -10,6 +10,7 @@ import Foundation
 
 struct Constants {
     struct URLs {
+        static let ReachabilityHostURL = "www.apple.com"
         static let BaseURL = "https://api.guildwars2.com/v2/"
         static let GroupsAPI = "achievements/groups"
         static let CatagoriesAPI = "achievements/categories"
@@ -33,6 +34,7 @@ struct Constants {
     }
     
     struct Storyboard {
+        static let Group = "Group"
         static let Category = "Category"
         static let Achievement = "Achievement"
     }
@@ -43,11 +45,23 @@ struct Constants {
         static let ImageAndDetailsTableViewCell = "ImageAndDetailsTableViewCell"
         static let AchievementListViewController = "AchievementListViewController"
         static let AchievementDetailViewController = "AchievementDetailViewController"
+        static let GroupListViewController = "GroupListViewController"
     }
     
     struct ScreenTitle {
         static let Groups = "Groups"
         static let Achievement = "Achievement"
     }
+    
+    struct NetworkError {
+        static let NetworkNotReachable = "Network not reachable!"
+    }
+    
+    struct Font {
+        static let Helvetica = "Helvetica"
+    }
 
+    struct CoreData {
+        static let Achievements = "Achievements"
+    }
 }
