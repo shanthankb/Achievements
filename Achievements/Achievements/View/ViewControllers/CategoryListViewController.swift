@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class CategoryListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, ViewControllerProtocol
+class CategoryListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource//, ViewControllerProtocol
 {
     @IBOutlet weak var listView: UITableView!
     var categoryList : [Category]?
@@ -41,8 +41,8 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
         self.navigationController?.popViewController(animated: true)
     }
 
-    func viewControllerWillLoad() {
-    }
+//    func viewControllerWillLoad() {
+//    }
     
     func reloadView()
     {

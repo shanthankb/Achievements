@@ -31,7 +31,7 @@ class CategoryController: NSObject {
                     if response != nil
                     {
                         let result = response!["result"] as! NSArray
-                        var categories : [Category] = []
+//                        var categories : [Category] = []
                         let tempGroup = Group.mr_findFirst(with: NSPredicate(format:"id = %@",group!.id!), in: inContext)
 
                         for categoryInfo in result{

@@ -33,7 +33,7 @@ class AchievementController: NSObject {
                     if response != nil
                     {
                         let result = response!["result"] as! NSArray
-                        var achievements : [Achievement] = []
+//                        var achievements : [Achievement] = []
                         
                         let tempCategory = Category.mr_findFirst(with: NSPredicate(format:"id = %d",category!.id), in: inContext)
 
