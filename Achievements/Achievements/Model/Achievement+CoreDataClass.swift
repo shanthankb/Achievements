@@ -2,7 +2,7 @@
 //  Achievement+CoreDataClass.swift
 //  
 //
-//  Created by Shanthan on 11/7/17.
+//  Created by Shanthan on 11/16/17.
 //
 //
 
@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class Achievement: NSManagedObject {
+public class Achievement: ParentEntity {
 
 }

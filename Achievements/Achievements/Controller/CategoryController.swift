@@ -53,7 +53,7 @@ class CategoryController: NSObject {
                             category!.id = id
                             category!.name = categoryInfoDictionary[Constants.KEYs.Name] as? String
                             category!.order = categoryInfoDictionary[Constants.KEYs.Order] as! Int16
-                            category!.categoryDescription = categoryInfoDictionary[Constants.KEYs.Description] as? String
+                            category!.entityDescription = categoryInfoDictionary[Constants.KEYs.Description] as? String
                             category!.icon = categoryInfoDictionary[Constants.KEYs.Icon] as? String
                             
                             let categoryAchievements = categoryInfoDictionary[Constants.KEYs.Achievements]

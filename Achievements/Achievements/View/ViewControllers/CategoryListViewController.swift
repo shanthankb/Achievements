@@ -66,7 +66,7 @@ class CategoryListViewController : UIViewController, UITableViewDelegate, UITabl
         cell  = listView.dequeueReusableCell(withIdentifier: Constants.View.ImageAndDetailsTableViewCell) as? ImageAndDetailsTableViewCell
         
         cell.titleLabel.text = categoryList![indexPath.row].name
-        cell.descriptionLabel.text = categoryList![indexPath.row].categoryDescription
+        cell.descriptionLabel.text = categoryList![indexPath.row].entityDescription
         let imageURL = URL(string: categoryList![indexPath.row].icon ?? "")
         cell.iconView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "PlaceHolderImage.png"))
         return cell

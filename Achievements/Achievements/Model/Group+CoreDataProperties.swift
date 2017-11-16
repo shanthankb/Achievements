@@ -2,7 +2,7 @@
 //  Group+CoreDataProperties.swift
 //  
 //
-//  Created by Shanthan on 11/9/17.
+//  Created by Shanthan on 11/16/17.
 //
 //
 
@@ -16,13 +16,11 @@ extension Group {
         return NSFetchRequest<Group>(entityName: "Group")
     }
 
-    @NSManaged public var groupDescription: String?
-    @NSManaged public var id: String?
-    @NSManaged public var name: String?
-    @NSManaged public var order: Int16
     @NSManaged public var categoryIDs: String?
+    @NSManaged public var id: String?
+    @NSManaged public var order: Int16
     @NSManaged public var categories: NSSet?
-    
+
     public func sortedCategories() -> [Category]?
     {
         let unsortedCategories = categories?.allObjects as? [Category]
@@ -31,7 +29,6 @@ extension Group {
         })
         return sortedCategories
     }
-
 }
 
 // MARK: Generated accessors for categories

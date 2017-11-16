@@ -52,7 +52,7 @@ class GroupController: NSObject {
                         group!.id = id
                         group!.name = groupInfoDictionary[Constants.KEYs.Name] as? String
                         group!.order = groupInfoDictionary[Constants.KEYs.Order] as! Int16
-                        group!.groupDescription = groupInfoDictionary[Constants.KEYs.Description] as? String
+                        group!.entityDescription = groupInfoDictionary[Constants.KEYs.Description] as? String
                         
                         let groupCategories = groupInfoDictionary[Constants.KEYs.Categories]
                         //saving category ids as string

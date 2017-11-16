@@ -1,5 +1,5 @@
 //
-//  Category+CoreDataClass.swift
+//  ParentEntity+CoreDataClass.swift
 //  
 //
 //  Created by Shanthan on 11/16/17.
@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class Category: ParentEntity {
+public class ParentEntity: NSManagedObject {
 
 }

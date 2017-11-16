@@ -50,7 +50,7 @@ class GroupListViewController : UIViewController, UITableViewDelegate, UITableVi
         var cell : TitleAndDescriptionTableViewCell!
         cell  = listView.dequeueReusableCell(withIdentifier: Constants.View.TitleAndDescriptionTableViewCell) as? TitleAndDescriptionTableViewCell
         cell.titleLabel.text = groupList![indexPath.row].name
-        cell.descriptionLabel.text = groupList![indexPath.row].groupDescription
+        cell.descriptionLabel.text = groupList![indexPath.row].entityDescription
         return cell
     }
     

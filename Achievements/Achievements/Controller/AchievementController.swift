@@ -55,7 +55,7 @@ class AchievementController: NSObject {
                             
                             achievement!.id = id
                             achievement!.name = achievementInfoDictionary[Constants.KEYs.Name] as? String
-                            achievement!.achievementDescription = achievementInfoDictionary[Constants.KEYs.Description] as? String
+                            achievement!.entityDescription = achievementInfoDictionary[Constants.KEYs.Description] as? String
                             achievement!.icon = achievementInfoDictionary[Constants.KEYs.Icon] as? String
                             achievement!.type = achievementInfoDictionary[Constants.KEYs.TypeKey] as? String
                             achievement!.lockedText = achievementInfoDictionary[Constants.KEYs.LockedText] as? String

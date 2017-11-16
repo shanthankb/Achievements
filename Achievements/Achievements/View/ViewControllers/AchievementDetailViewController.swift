@@ -28,7 +28,7 @@ class AchievementDetailViewController: UIViewController {
         self.navigationItem.title = Constants.ScreenTitle.Achievement//achievement?.name
         self.nameLabel.text = achievement?.name
         self.typeLabel.text = achievement?.type
-        self.descriptionView.text = achievement?.achievementDescription
+        self.descriptionView.text = achievement?.entityDescription
         
         let imageURL = URL(string: achievement?.icon ?? "")
         

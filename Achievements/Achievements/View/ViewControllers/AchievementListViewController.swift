@@ -59,7 +59,7 @@ class AchievementListViewController : UIViewController, UITableViewDelegate, UIT
         var cell : ImageAndDetailsTableViewCell!
         cell  = listView.dequeueReusableCell(withIdentifier: Constants.View.ImageAndDetailsTableViewCell) as? ImageAndDetailsTableViewCell
         cell.titleLabel.text = achievementList![indexPath.row].name
-        cell.descriptionLabel.text = achievementList![indexPath.row].achievementDescription
+        cell.descriptionLabel.text = achievementList![indexPath.row].entityDescription
         let imageURL = URL(string: achievementList![indexPath.row].icon ?? "")
         
         cell.iconView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "PlaceHolderImage.png"))

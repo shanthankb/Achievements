@@ -2,7 +2,7 @@
 //  Achievement+CoreDataProperties.swift
 //  
 //
-//  Created by Shanthan on 11/7/17.
+//  Created by Shanthan on 11/16/17.
 //
 //
 
@@ -16,16 +16,14 @@ extension Achievement {
         return NSFetchRequest<Achievement>(entityName: "Achievement")
     }
 
-    @NSManaged public var achievementDescription: String?
     @NSManaged public var flags: String?
     @NSManaged public var icon: String?
-    @NSManaged public var id: Int16
     @NSManaged public var lockedText: String?
-    @NSManaged public var name: String?
     @NSManaged public var pointCap: Int16
     @NSManaged public var prerequisites: String?
     @NSManaged public var requirement: String?
     @NSManaged public var type: String?
+    @NSManaged public var id: Int16
     @NSManaged public var bits: NSSet?
     @NSManaged public var category: Category?
     @NSManaged public var rewards: NSSet?

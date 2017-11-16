@@ -8,30 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		2317CE8A1FBB2655005CE022 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CE891FBB2655005CE022 /* Constants.swift */; };
+		2317CEDD1FBD5B37005CE022 /* Tier+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CECF1FBD5B37005CE022 /* Tier+CoreDataClass.swift */; };
+		2317CEDE1FBD5B37005CE022 /* Tier+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED01FBD5B37005CE022 /* Tier+CoreDataProperties.swift */; };
+		2317CEDF1FBD5B37005CE022 /* Reward+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED11FBD5B37005CE022 /* Reward+CoreDataClass.swift */; };
+		2317CEE01FBD5B37005CE022 /* Reward+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED21FBD5B37005CE022 /* Reward+CoreDataProperties.swift */; };
+		2317CEE11FBD5B37005CE022 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED31FBD5B37005CE022 /* Category+CoreDataClass.swift */; };
+		2317CEE21FBD5B37005CE022 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED41FBD5B37005CE022 /* Category+CoreDataProperties.swift */; };
+		2317CEE31FBD5B37005CE022 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED51FBD5B37005CE022 /* Group+CoreDataClass.swift */; };
+		2317CEE41FBD5B37005CE022 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED61FBD5B37005CE022 /* Group+CoreDataProperties.swift */; };
+		2317CEE51FBD5B37005CE022 /* ParentEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED71FBD5B37005CE022 /* ParentEntity+CoreDataClass.swift */; };
+		2317CEE61FBD5B37005CE022 /* ParentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED81FBD5B37005CE022 /* ParentEntity+CoreDataProperties.swift */; };
+		2317CEE71FBD5B37005CE022 /* Achievement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CED91FBD5B37005CE022 /* Achievement+CoreDataClass.swift */; };
+		2317CEE81FBD5B37005CE022 /* Achievement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CEDA1FBD5B37005CE022 /* Achievement+CoreDataProperties.swift */; };
+		2317CEE91FBD5B37005CE022 /* Bit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CEDB1FBD5B37005CE022 /* Bit+CoreDataClass.swift */; };
+		2317CEEA1FBD5B37005CE022 /* Bit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317CEDC1FBD5B37005CE022 /* Bit+CoreDataProperties.swift */; };
 		2339E2141FB1F8EF0004632C /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2339E2131FB1F8EF0004632C /* Category.storyboard */; };
 		2339E2161FB215B80004632C /* Achievement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2339E2151FB215B80004632C /* Achievement.storyboard */; };
 		2339E2461FB463C40004632C /* AchievementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E22B1FB463C40004632C /* AchievementController.swift */; };
 		2339E2471FB463C40004632C /* GETRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E22D1FB463C40004632C /* GETRequestHelper.swift */; };
 		2339E2481FB463C40004632C /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E22E1FB463C40004632C /* CategoryController.swift */; };
 		2339E2491FB463C40004632C /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E22F1FB463C40004632C /* GroupController.swift */; };
-		2339E24C1FB463C40004632C /* Bit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2331FB463C40004632C /* Bit+CoreDataClass.swift */; };
-		2339E24D1FB463C40004632C /* Bit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2341FB463C40004632C /* Bit+CoreDataProperties.swift */; };
-		2339E24E1FB463C40004632C /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2351FB463C40004632C /* Category+CoreDataClass.swift */; };
-		2339E24F1FB463C40004632C /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2361FB463C40004632C /* Category+CoreDataProperties.swift */; };
-		2339E2501FB463C40004632C /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2371FB463C40004632C /* Group+CoreDataClass.swift */; };
-		2339E2511FB463C40004632C /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2381FB463C40004632C /* Group+CoreDataProperties.swift */; };
-		2339E2521FB463C40004632C /* Reward+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2391FB463C40004632C /* Reward+CoreDataClass.swift */; };
-		2339E2531FB463C40004632C /* Reward+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E23A1FB463C40004632C /* Reward+CoreDataProperties.swift */; };
-		2339E2541FB463C40004632C /* Tier+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E23B1FB463C40004632C /* Tier+CoreDataClass.swift */; };
-		2339E2551FB463C40004632C /* Tier+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E23C1FB463C40004632C /* Tier+CoreDataProperties.swift */; };
 		2339E2561FB463C40004632C /* ImageAndDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E23F1FB463C40004632C /* ImageAndDetailsTableViewCell.swift */; };
 		2339E2571FB463C40004632C /* TitleAndDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2401FB463C40004632C /* TitleAndDescriptionTableViewCell.swift */; };
 		2339E2581FB463C40004632C /* AchievementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2421FB463C40004632C /* AchievementDetailViewController.swift */; };
 		2339E2591FB463C40004632C /* AchievementListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2431FB463C40004632C /* AchievementListViewController.swift */; };
 		2339E25A1FB463C40004632C /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2441FB463C40004632C /* CategoryListViewController.swift */; };
 		2339E25B1FB463C40004632C /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E2451FB463C40004632C /* GroupListViewController.swift */; };
-		2339E25E1FBAC5120004632C /* Achievement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E25C1FBAC5120004632C /* Achievement+CoreDataClass.swift */; };
-		2339E25F1FBAC5120004632C /* Achievement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339E25D1FBAC5120004632C /* Achievement+CoreDataProperties.swift */; };
 		2364B4CA1FB06C6100B039D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364B4C91FB06C6100B039D7 /* AppDelegate.swift */; };
 		2364B4CF1FB06C6100B039D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2364B4CD1FB06C6100B039D7 /* Main.storyboard */; };
 		2364B4D21FB06C6100B039D7 /* Achievements.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2364B4D01FB06C6100B039D7 /* Achievements.xcdatamodeld */; };
@@ -54,30 +56,32 @@
 
 /* Begin PBXFileReference section */
 		2317CE891FBB2655005CE022 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Achievements/Constants.swift; sourceTree = SOURCE_ROOT; };
+		2317CECF1FBD5B37005CE022 /* Tier+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tier+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2317CED01FBD5B37005CE022 /* Tier+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tier+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2317CED11FBD5B37005CE022 /* Reward+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reward+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2317CED21FBD5B37005CE022 /* Reward+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reward+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2317CED31FBD5B37005CE022 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2317CED41FBD5B37005CE022 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2317CED51FBD5B37005CE022 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2317CED61FBD5B37005CE022 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2317CED71FBD5B37005CE022 /* ParentEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParentEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2317CED81FBD5B37005CE022 /* ParentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2317CED91FBD5B37005CE022 /* Achievement+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Achievement+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2317CEDA1FBD5B37005CE022 /* Achievement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Achievement+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2317CEDB1FBD5B37005CE022 /* Bit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2317CEDC1FBD5B37005CE022 /* Bit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2339E2131FB1F8EF0004632C /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		2339E2151FB215B80004632C /* Achievement.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievement.storyboard; sourceTree = "<group>"; };
 		2339E22B1FB463C40004632C /* AchievementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementController.swift; sourceTree = "<group>"; };
 		2339E22D1FB463C40004632C /* GETRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GETRequestHelper.swift; sourceTree = "<group>"; };
 		2339E22E1FB463C40004632C /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		2339E22F1FB463C40004632C /* GroupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
-		2339E2331FB463C40004632C /* Bit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2339E2341FB463C40004632C /* Bit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bit+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2339E2351FB463C40004632C /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2339E2361FB463C40004632C /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2339E2371FB463C40004632C /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2339E2381FB463C40004632C /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2339E2391FB463C40004632C /* Reward+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reward+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2339E23A1FB463C40004632C /* Reward+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reward+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2339E23B1FB463C40004632C /* Tier+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tier+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2339E23C1FB463C40004632C /* Tier+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tier+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2339E23F1FB463C40004632C /* ImageAndDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAndDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		2339E2401FB463C40004632C /* TitleAndDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleAndDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		2339E2421FB463C40004632C /* AchievementDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementDetailViewController.swift; sourceTree = "<group>"; };
 		2339E2431FB463C40004632C /* AchievementListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementListViewController.swift; sourceTree = "<group>"; };
 		2339E2441FB463C40004632C /* CategoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		2339E2451FB463C40004632C /* GroupListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
-		2339E25C1FBAC5120004632C /* Achievement+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Achievement+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2339E25D1FBAC5120004632C /* Achievement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Achievement+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2364B4C61FB06C6100B039D7 /* Achievements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Achievements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2364B4C91FB06C6100B039D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2364B4CE1FB06C6100B039D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,18 +140,20 @@
 		2339E2301FB463C40004632C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2339E25C1FBAC5120004632C /* Achievement+CoreDataClass.swift */,
-				2339E25D1FBAC5120004632C /* Achievement+CoreDataProperties.swift */,
-				2339E2331FB463C40004632C /* Bit+CoreDataClass.swift */,
-				2339E2341FB463C40004632C /* Bit+CoreDataProperties.swift */,
-				2339E2351FB463C40004632C /* Category+CoreDataClass.swift */,
-				2339E2361FB463C40004632C /* Category+CoreDataProperties.swift */,
-				2339E2371FB463C40004632C /* Group+CoreDataClass.swift */,
-				2339E2381FB463C40004632C /* Group+CoreDataProperties.swift */,
-				2339E2391FB463C40004632C /* Reward+CoreDataClass.swift */,
-				2339E23A1FB463C40004632C /* Reward+CoreDataProperties.swift */,
-				2339E23B1FB463C40004632C /* Tier+CoreDataClass.swift */,
-				2339E23C1FB463C40004632C /* Tier+CoreDataProperties.swift */,
+				2317CECF1FBD5B37005CE022 /* Tier+CoreDataClass.swift */,
+				2317CED01FBD5B37005CE022 /* Tier+CoreDataProperties.swift */,
+				2317CED11FBD5B37005CE022 /* Reward+CoreDataClass.swift */,
+				2317CED21FBD5B37005CE022 /* Reward+CoreDataProperties.swift */,
+				2317CED31FBD5B37005CE022 /* Category+CoreDataClass.swift */,
+				2317CED41FBD5B37005CE022 /* Category+CoreDataProperties.swift */,
+				2317CED51FBD5B37005CE022 /* Group+CoreDataClass.swift */,
+				2317CED61FBD5B37005CE022 /* Group+CoreDataProperties.swift */,
+				2317CED71FBD5B37005CE022 /* ParentEntity+CoreDataClass.swift */,
+				2317CED81FBD5B37005CE022 /* ParentEntity+CoreDataProperties.swift */,
+				2317CED91FBD5B37005CE022 /* Achievement+CoreDataClass.swift */,
+				2317CEDA1FBD5B37005CE022 /* Achievement+CoreDataProperties.swift */,
+				2317CEDB1FBD5B37005CE022 /* Bit+CoreDataClass.swift */,
+				2317CEDC1FBD5B37005CE022 /* Bit+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,26 +447,28 @@
 				2339E2461FB463C40004632C /* AchievementController.swift in Sources */,
 				2339E2561FB463C40004632C /* ImageAndDetailsTableViewCell.swift in Sources */,
 				2339E2481FB463C40004632C /* CategoryController.swift in Sources */,
+				2317CEE31FBD5B37005CE022 /* Group+CoreDataClass.swift in Sources */,
 				2339E2581FB463C40004632C /* AchievementDetailViewController.swift in Sources */,
-				2339E24E1FB463C40004632C /* Category+CoreDataClass.swift in Sources */,
+				2317CEE91FBD5B37005CE022 /* Bit+CoreDataClass.swift in Sources */,
+				2317CEE71FBD5B37005CE022 /* Achievement+CoreDataClass.swift in Sources */,
 				2364B4D21FB06C6100B039D7 /* Achievements.xcdatamodeld in Sources */,
-				2339E24D1FB463C40004632C /* Bit+CoreDataProperties.swift in Sources */,
+				2317CEE11FBD5B37005CE022 /* Category+CoreDataClass.swift in Sources */,
+				2317CEDD1FBD5B37005CE022 /* Tier+CoreDataClass.swift in Sources */,
 				2339E2471FB463C40004632C /* GETRequestHelper.swift in Sources */,
-				2339E24F1FB463C40004632C /* Category+CoreDataProperties.swift in Sources */,
 				2339E2571FB463C40004632C /* TitleAndDescriptionTableViewCell.swift in Sources */,
-				2339E25F1FBAC5120004632C /* Achievement+CoreDataProperties.swift in Sources */,
-				2339E24C1FB463C40004632C /* Bit+CoreDataClass.swift in Sources */,
-				2339E2531FB463C40004632C /* Reward+CoreDataProperties.swift in Sources */,
-				2339E25E1FBAC5120004632C /* Achievement+CoreDataClass.swift in Sources */,
+				2317CEE81FBD5B37005CE022 /* Achievement+CoreDataProperties.swift in Sources */,
 				2339E25A1FB463C40004632C /* CategoryListViewController.swift in Sources */,
+				2317CEE41FBD5B37005CE022 /* Group+CoreDataProperties.swift in Sources */,
+				2317CEE61FBD5B37005CE022 /* ParentEntity+CoreDataProperties.swift in Sources */,
+				2317CEE01FBD5B37005CE022 /* Reward+CoreDataProperties.swift in Sources */,
 				2364B4CA1FB06C6100B039D7 /* AppDelegate.swift in Sources */,
-				2339E2521FB463C40004632C /* Reward+CoreDataClass.swift in Sources */,
-				2339E2551FB463C40004632C /* Tier+CoreDataProperties.swift in Sources */,
+				2317CEE21FBD5B37005CE022 /* Category+CoreDataProperties.swift in Sources */,
 				2339E2491FB463C40004632C /* GroupController.swift in Sources */,
-				2339E2501FB463C40004632C /* Group+CoreDataClass.swift in Sources */,
-				2339E2511FB463C40004632C /* Group+CoreDataProperties.swift in Sources */,
+				2317CEE51FBD5B37005CE022 /* ParentEntity+CoreDataClass.swift in Sources */,
+				2317CEEA1FBD5B37005CE022 /* Bit+CoreDataProperties.swift in Sources */,
+				2317CEDE1FBD5B37005CE022 /* Tier+CoreDataProperties.swift in Sources */,
+				2317CEDF1FBD5B37005CE022 /* Reward+CoreDataClass.swift in Sources */,
 				2339E2591FB463C40004632C /* AchievementListViewController.swift in Sources */,
-				2339E2541FB463C40004632C /* Tier+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

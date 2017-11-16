@@ -2,7 +2,7 @@
 //  Reward+CoreDataProperties.swift
 //  
 //
-//  Created by Shanthan on 11/7/17.
+//  Created by Shanthan on 11/16/17.
 //
 //
 
@@ -20,6 +20,6 @@ extension Reward {
     @NSManaged public var id: Int16
     @NSManaged public var region: String?
     @NSManaged public var type: String?
-    @NSManaged public var reward: Achievement?
+    @NSManaged public var achievement: Achievement?
 
 }

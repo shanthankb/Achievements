@@ -2,7 +2,7 @@
 //  Category+CoreDataProperties.swift
 //  
 //
-//  Created by Shanthan on 11/9/17.
+//  Created by Shanthan on 11/16/17.
 //
 //
 
@@ -16,12 +16,10 @@ extension Category {
         return NSFetchRequest<Category>(entityName: "Category")
     }
 
-    @NSManaged public var categoryDescription: String?
-    @NSManaged public var icon: String?
-    @NSManaged public var id: Int16
-    @NSManaged public var name: String?
-    @NSManaged public var order: Int16
     @NSManaged public var achievementIDs: String?
+    @NSManaged public var icon: String?
+    @NSManaged public var order: Int16
+    @NSManaged public var id: Int16
     @NSManaged public var achievements: NSSet?
     @NSManaged public var group: Group?
 
