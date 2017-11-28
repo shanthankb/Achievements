@@ -7,77 +7,54 @@
 //
 
 import XCTest
+import MagicalRecord
 
 @testable import Achievements
 
 class AchievementsTests: XCTestCase {
-    var groupController : GroupController?
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        groupController = GroupController()
-
+        MagicalRecord.cleanUp()
+        MagicalRecord.setupCoreDataStackWithInMemoryStore()
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        groupController = nil
+        MagicalRecord.cleanUp()
         super.tearDown()
     }
     
-//    func testExample() {
-//        // This is an example of a functional test case.
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//    }
-    
     func testGroupCreation()
     {
-        let promise = expectation(description: "Status code: 200")
+        //data can be read from a file
+        let groupInfo = [
+            "categories" :[
+                Int16(148),
+                Int16(170),
+                Int16(30)
+            ],
+            "description": "Achievements related to the Fractals of the Mists.",
+            "id":"4E6A6CE7-B131-40BB-81A3-235CDBACDAA9",
+            "name" : "Fractals of the Mists",
+            "order" : Int16(9)
+            ] as [String : AnyObject]
+        
+        let context = NSManagedObjectContext.mr_context(with: NSPersistentStoreCoordinator.mr_default()!)
+        
+        context.mr_save({ (inContext : NSManagedObjectContext) in
+            let group = ModelFactory.create(group: groupInfo, inContext: inContext)
+            XCTAssertNotNil(group, "Group created!")
 
-        groupController!.fetchGroups(successBlock: { (response : [AnyHashable : Any]?) in
-//            print("testGroupCreation : \(String(describing: response))")
-            if(response != nil)
-            {
-                print("PASS")
-            }
-            else{
-                print("FAIL")
-            }
-            promise.fulfill()
-        }) { (msg : String?, code : Int?) in
-            print(msg ?? "Fail!", code ?? 0)
-            promise.fulfill()
+        }) { (state : Bool, error : Error?) in
+            XCTAssertTrue(state)
         }
         
-//        var i = 0
-//        while(i < 100000000) {
-//           print(i)
-//            i += 1
-//        }
-        waitForExpectations(timeout: 15) { (error : Error?) in
-            
-        }
-        
+
         self.measure {
             // Put the code you want to measure the time of here.
         }
 
     }
-    
-//    func testPerformanceAPIs()
-//    {
-//        self.measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
-    
-//    func testPerformanceExample() {
-//        // This is an example of a performance test case.
-//        self.measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
-    
 }
