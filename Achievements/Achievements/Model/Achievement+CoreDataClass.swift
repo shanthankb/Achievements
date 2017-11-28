@@ -12,4 +12,9 @@ import CoreData
 
 public class Achievement: ParentEntity {
 
+    func method(val : Int, val2 : Int)
+    {
+        
+    }
+
 }

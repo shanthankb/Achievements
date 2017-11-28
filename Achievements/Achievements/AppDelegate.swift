@@ -146,6 +146,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.rootViewController!.setViewControllers([viewController], animated: true)
         
     }
+    
+    func showGroupList(val : Int)
+    {
+        
+    }
+    
+    func showGroupList(val : Int, val1 : Int)
+    {
+        
+    }
+
 }
 
 protocol ViewControllerProtocol {

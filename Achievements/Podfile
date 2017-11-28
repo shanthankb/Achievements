@@ -12,3 +12,27 @@ pod 'SDWebImage'
 pod 'MagicalRecord'
 
 end
+
+target 'AchievementsTests' do
+    # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+    use_frameworks!
+    
+    # Pods for Achievements
+    pod 'Alamofire'
+    pod 'AlamofireImage'
+    pod 'SDWebImage'
+    pod 'MagicalRecord'
+    
+end
+
+target 'AchievementsAPITests' do
+    # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+    use_frameworks!
+    
+    # Pods for Achievements
+    pod 'Alamofire'
+    pod 'AlamofireImage'
+    pod 'SDWebImage'
+    pod 'MagicalRecord'
+    
+end

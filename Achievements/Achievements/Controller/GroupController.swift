@@ -34,34 +34,40 @@ class GroupController: NSObject {
                 {
                     let result = response![Constants.KEYs.Result] as! NSArray
                     for groupInfo in result{
-                        let groupInfoDictionary = (groupInfo as! [String : AnyObject])
-                        let id = groupInfoDictionary[Constants.KEYs.Id] as! String
-                        
-                        let groups = Group.mr_findAll(with: NSPredicate(format: "id = %@",id), in: inContext) as? [Group]
-                        
-                        var group : Group?
-                        if (groups != nil && groups!.isEmpty == false)
-                        {
-                            group = groups![0]
-                        }
-                        else
-                        {
-                            group = Group.mr_createEntity(in: inContext)
-                        }
-                        
-                        group!.id = id
-                        group!.name = groupInfoDictionary[Constants.KEYs.Name] as? String
-                        group!.order = groupInfoDictionary[Constants.KEYs.Order] as! Int16
-                        group!.entityDescription = groupInfoDictionary[Constants.KEYs.Description] as? String
-                        
-                        let groupCategories = groupInfoDictionary[Constants.KEYs.Categories]
-                        //saving category ids as string
-                        let categoryIDs = ((groupCategories as! [Int16]).map{String(describing: $0)}).joined(separator: ",")
-                        group!.categoryIDs = categoryIDs
+
+                        _ = ModelFactory.create(group: groupInfo as! [String : AnyObject], inContext: inContext)
+
                     }
+//                    let result = response![Constants.KEYs.Result] as! NSArray
+//                    for groupInfo in result{
+//                        let groupInfoDictionary = (groupInfo as! [String : AnyObject])
+//                        let id = groupInfoDictionary[Constants.KEYs.Id] as! String
+//
+//                        let groups = Group.mr_findAll(with: NSPredicate(format: "id = %@",id), in: inContext) as? [Group]
+//                        
+//                        var group : Group?
+//                        if (groups != nil && groups!.isEmpty == false)
+//                        {
+//                            group = groups![0]
+//                        }
+//                        else
+//                        {
+//                            group = Group.mr_createEntity(in: inContext)
+//                        }
+//                        
+//                        group!.id = id
+//                        group!.name = groupInfoDictionary[Constants.KEYs.Name] as? String
+//                        group!.order = groupInfoDictionary[Constants.KEYs.Order] as! Int16
+//                        group!.entityDescription = groupInfoDictionary[Constants.KEYs.Description] as? String
+//                        
+//                        let groupCategories = groupInfoDictionary[Constants.KEYs.Categories]
+//                        //saving category ids as string
+//                        let categoryIDs = ((groupCategories as! [Int16]).map{String(describing: $0)}).joined(separator: ",")
+//                        group!.categoryIDs = categoryIDs
+//                    }
                 }
             }, completion: { (state : Bool, error : Error?) in
-                successBlock(nil)
+                successBlock(response)
 
             })
             
@@ -69,7 +75,7 @@ class GroupController: NSObject {
             failureBlock(message, code)
         }
     }
-    
+        
     func groups() -> [Group]?
     {
         let context = NSManagedObjectContext.mr_default()

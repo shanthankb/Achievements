@@ -33,36 +33,15 @@ class AchievementController: NSObject {
                     if response != nil
                     {
                         let result = response![Constants.KEYs.Result] as! NSArray
-//                        var achievements : [Achievement] = []
                         
                         let tempCategory = Category.mr_findFirst(with: NSPredicate(format:"id = %d",category!.id), in: inContext)
 
                         for achievementInfo in result{
-                            let achievementInfoDictionary = (achievementInfo as! [String : AnyObject])
-                            let id = achievementInfoDictionary[Constants.KEYs.Id] as! Int16
                             
-                            let storedAchievements = Achievement.mr_findAll(with: NSPredicate(format: "id = %d",id), in: inContext) as? [Achievement]
-                            
-                            var achievement : Achievement?
-                            if (storedAchievements != nil && storedAchievements!.isEmpty == false)
-                            {
-                                achievement = storedAchievements![0]
-                            }
-                            else
-                            {
-                                achievement = Achievement.mr_createEntity(in: inContext)
-                            }
-                            
-                            achievement!.id = id
-                            achievement!.name = achievementInfoDictionary[Constants.KEYs.Name] as? String
-                            achievement!.entityDescription = achievementInfoDictionary[Constants.KEYs.Description] as? String
-                            achievement!.icon = achievementInfoDictionary[Constants.KEYs.Icon] as? String
-                            achievement!.type = achievementInfoDictionary[Constants.KEYs.TypeKey] as? String
-                            achievement!.lockedText = achievementInfoDictionary[Constants.KEYs.LockedText] as? String
-                            
+                            let achievement = ModelFactory.create(achievement: achievementInfo as! [String: AnyObject], inContext: inContext)
                             //Tier, Bit and Reward objects can be created here for Achievements
                             
-                            tempCategory!.addToAchievements(achievement!)
+                            tempCategory!.addToAchievements(achievement)
                         }
                     }
                     

@@ -12,4 +12,8 @@ import CoreData
 
 public class ParentEntity: NSManagedObject {
 
+    func method(val : Int)
+    {
+        
+    }
 }

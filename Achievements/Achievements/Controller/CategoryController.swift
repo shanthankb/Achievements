@@ -35,35 +35,8 @@ class CategoryController: NSObject {
                         let tempGroup = Group.mr_findFirst(with: NSPredicate(format:"id = %@",group!.id!), in: inContext)
 
                         for categoryInfo in result{
-                            let categoryInfoDictionary = (categoryInfo as! [String : AnyObject])
-                            let id = categoryInfoDictionary[Constants.KEYs.Id] as! Int16
-                            
-                            let storedCategories = Category.mr_findAll(with: NSPredicate(format: "id = %d",id), in: inContext) as? [Category]
-                            
-                            var category : Category?
-                            if (storedCategories != nil && storedCategories!.isEmpty == false)
-                            {
-                                category = storedCategories![0]
-                            }
-                            else
-                            {
-                                category = Category.mr_createEntity(in: inContext)
-                            }
-                            
-                            category!.id = id
-                            category!.name = categoryInfoDictionary[Constants.KEYs.Name] as? String
-                            category!.order = categoryInfoDictionary[Constants.KEYs.Order] as! Int16
-                            category!.entityDescription = categoryInfoDictionary[Constants.KEYs.Description] as? String
-                            category!.icon = categoryInfoDictionary[Constants.KEYs.Icon] as? String
-                            
-                            let categoryAchievements = categoryInfoDictionary[Constants.KEYs.Achievements]
-                            
-                            let achivementIDs = ((categoryAchievements as! [Int16]).map{String(describing: $0)}).joined(separator: ",")
-                            
-                            //saving achievement ids as string
-                            category!.achievementIDs = achivementIDs
-
-                            tempGroup!.addToCategories(category!)
+                            let category = ModelFactory.create(category: categoryInfo as! [String : AnyObject], inContext: inContext)
+                            tempGroup!.addToCategories(category)
                         }
                     }
                     
