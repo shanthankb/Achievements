@@ -15,10 +15,6 @@ class ImageAndDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var iconView: UIImageView!
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
     }

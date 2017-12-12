@@ -13,10 +13,6 @@ class TitleAndDescriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
     }
