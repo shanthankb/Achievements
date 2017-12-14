@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-extension ParentEntity {
+extension ParentEntity: FactoryProtocol {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<ParentEntity> {
         return NSFetchRequest<ParentEntity>(entityName: "ParentEntity")
@@ -18,5 +18,10 @@ extension ParentEntity {
 
     @NSManaged public var name: String?
     @NSManaged public var entityDescription: String?
+
+    class func create(with info: [String : AnyObject], inContext: NSManagedObjectContext) -> NSManagedObject? {
+        fatalError("Must Override")
+        //return ParentEntity.mr_createEntity()
+    }
 
 }

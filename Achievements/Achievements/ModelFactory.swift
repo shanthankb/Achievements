@@ -9,9 +9,13 @@
 import Foundation
 import MagicalRecord
 
-class ModelFactory: NSObject {
-    
-    class func create(group groupInfo: [String : AnyObject], inContext : NSManagedObjectContext) -> Group
+protocol FactoryProtocol {
+     static func create(with info: [String : AnyObject], inContext : NSManagedObjectContext) -> NSManagedObject?
+}
+
+extension ModelFactory
+{
+    fileprivate class func create(group groupInfo: [String : AnyObject], inContext : NSManagedObjectContext) -> Group
     {
         let groupInfoDictionary = groupInfo//(groupInfo as! [String : AnyObject])
         let id = groupInfoDictionary[Constants.KEYs.Id] as! String
@@ -41,7 +45,7 @@ class ModelFactory: NSObject {
         return group!
     }
     
-    class func create(category categoryInfo :[String : AnyObject], inContext : NSManagedObjectContext ) -> Category
+    fileprivate class func create(category categoryInfo :[String : AnyObject], inContext : NSManagedObjectContext ) -> Category
     {
         let categoryInfoDictionary = categoryInfo//(categoryInfo as! [String : AnyObject])
         let id = categoryInfoDictionary[Constants.KEYs.Id] as! Int16
@@ -74,7 +78,7 @@ class ModelFactory: NSObject {
         return category!
     }
     
-    class func create(achievement achievementInfo :[String : AnyObject], inContext : NSManagedObjectContext ) -> Achievement
+    fileprivate class func create(achievement achievementInfo :[String : AnyObject], inContext : NSManagedObjectContext ) -> Achievement
     {
         let achievementInfoDictionary = achievementInfo//(achievementInfo as! [String : AnyObject])
         let id = achievementInfoDictionary[Constants.KEYs.Id] as! Int16
@@ -84,11 +88,11 @@ class ModelFactory: NSObject {
         var achievement : Achievement?
         if (storedAchievements != nil && storedAchievements!.isEmpty == false)
         {
-        achievement = storedAchievements![0]
+            achievement = storedAchievements![0]
         }
         else
         {
-        achievement = Achievement.mr_createEntity(in: inContext)
+            achievement = Achievement.mr_createEntity(in: inContext)
         }
         
         achievement!.id = id
@@ -99,5 +103,29 @@ class ModelFactory: NSObject {
         achievement!.lockedText = achievementInfoDictionary[Constants.KEYs.LockedText] as? String
         
         return achievement!
+    }
+}
+
+class ModelFactory: NSObject {
+    
+    class func create(object : Constants.ObjectType, with Info: [String : AnyObject], in context : NSManagedObjectContext) -> NSManagedObject
+    {
+        var modelObject : NSManagedObject?
+        switch object {
+            
+        case .Group:
+            modelObject = ModelFactory.create(group: Info, inContext: context)
+            break
+            
+        case .Category:
+            modelObject = ModelFactory.create(category: Info, inContext: context)
+            break
+
+        case .Achievement:
+            modelObject = ModelFactory.create(achievement: Info, inContext: context)
+            break
+        }
+        
+        return modelObject!
     }
 }

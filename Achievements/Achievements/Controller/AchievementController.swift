@@ -38,10 +38,13 @@ class AchievementController: NSObject {
 
                         for achievementInfo in result{
                             
-                            let achievement = ModelFactory.create(achievement: achievementInfo as! [String: AnyObject], inContext: inContext)
+                            let achievement = Achievement.create(with: achievementInfo as! [String: AnyObject], inContext: inContext)
+
                             //Tier, Bit and Reward objects can be created here for Achievements
-                            
-                            tempCategory!.addToAchievements(achievement)
+                            if achievement != nil
+                            {
+                                tempCategory!.addToAchievements(achievement as! Achievement)
+                            }
                         }
                     }
                     

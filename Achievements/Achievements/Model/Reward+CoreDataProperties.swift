@@ -22,4 +22,7 @@ extension Reward {
     @NSManaged public var type: String?
     @NSManaged public var achievement: Achievement?
 
+    class func create(with info: [String : AnyObject], inContext: NSManagedObjectContext) -> NSManagedObject? {
+        return nil
+    }
 }

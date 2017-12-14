@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class Reward: NSManagedObject {
+public class Reward: NSManagedObject, FactoryProtocol {
 
 }

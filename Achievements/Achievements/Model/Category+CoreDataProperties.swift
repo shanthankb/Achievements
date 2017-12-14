@@ -23,6 +23,10 @@ extension Category {
     @NSManaged public var achievements: NSSet?
     @NSManaged public var group: Group?
 
+    override class func create(with info: [String : AnyObject], inContext: NSManagedObjectContext) -> NSManagedObject? {
+        let category = ModelFactory.create(object: Constants.ObjectType.Category, with: info, in: inContext)
+        return category
+    }
 }
 
 // MARK: Generated accessors for achievements

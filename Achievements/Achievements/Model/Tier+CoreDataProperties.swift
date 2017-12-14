@@ -20,4 +20,8 @@ extension Tier {
     @NSManaged public var points: Int16
     @NSManaged public var achievement: Achievement?
 
+    class func create(with info: [String : AnyObject], inContext: NSManagedObjectContext) -> NSManagedObject? {
+        return nil
+    }
+
 }

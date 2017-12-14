@@ -35,7 +35,7 @@ class GroupController: NSObject {
                     let result = response![Constants.KEYs.Result] as! NSArray
                     for groupInfo in result{
 
-                        _ = ModelFactory.create(group: groupInfo as! [String : AnyObject], inContext: inContext)
+                        _ = Group.create(with: groupInfo as! [String : AnyObject], inContext: inContext)
 
                     }
                 }

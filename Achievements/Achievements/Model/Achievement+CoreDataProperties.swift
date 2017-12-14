@@ -29,6 +29,10 @@ extension Achievement {
     @NSManaged public var rewards: NSSet?
     @NSManaged public var tiers: NSSet?
 
+    override class func create(with info: [String : AnyObject], inContext: NSManagedObjectContext) -> NSManagedObject? {
+        let achievement = ModelFactory.create(object: Constants.ObjectType.Achievement, with: info, in: inContext)
+        return achievement
+    }
 }
 
 // MARK: Generated accessors for bits

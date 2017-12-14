@@ -23,7 +23,9 @@ class CategoryController: NSObject {
     {
         let ids = group?.categoryIDs
 
-        if ids != nil {
+        guard ids != nil else {
+            return
+        }
             GETRequestHelper.fetchCategories(with: ids, successBlock: { (response : [AnyHashable : Any]?) in
                 
                 let context = NSManagedObjectContext.mr_context(with: NSPersistentStoreCoordinator.mr_default()!)
@@ -31,12 +33,14 @@ class CategoryController: NSObject {
                     if response != nil
                     {
                         let result = response![Constants.KEYs.Result] as! NSArray
-//                        var categories : [Category] = []
+
                         let tempGroup = Group.mr_findFirst(with: NSPredicate(format:"id = %@",group!.id!), in: inContext)
 
                         for categoryInfo in result{
-                            let category = ModelFactory.create(category: categoryInfo as! [String : AnyObject], inContext: inContext)
-                            tempGroup!.addToCategories(category)
+                            let category = Category.create(with: categoryInfo as! [String : AnyObject], inContext: inContext)
+                            if category != nil{
+                                tempGroup!.addToCategories(category as! Category)
+                            }
                         }
                     }
                     
@@ -48,8 +52,6 @@ class CategoryController: NSObject {
             }){ (message : String?,code : Int?) in
                 failureBlock(message, code)
             }
-
-        }
     }
     
     

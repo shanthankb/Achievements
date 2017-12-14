@@ -29,6 +29,12 @@ extension Group {
         })
         return sortedCategories
     }
+    
+    override class func create(with info: [String : AnyObject], inContext: NSManagedObjectContext) -> NSManagedObject? {
+        let group = ModelFactory.create(object: Constants.ObjectType.Group, with: info, in: inContext)
+        return group
+    }
+
 }
 
 // MARK: Generated accessors for categories

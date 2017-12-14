@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class Bit: NSManagedObject {
+public class Bit: NSManagedObject, FactoryProtocol {
 
 }

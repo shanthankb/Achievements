@@ -33,6 +33,12 @@ struct Constants {
         static let Categories = "categories"
     }
     
+    enum ObjectType : String {
+        case Group = "GroupObj"
+        case Category = "CategoryObj"
+        case Achievement = "AchievementObj"
+    }
+    
     struct Storyboard {
         static let Group = "Group"
         static let Category = "Category"
