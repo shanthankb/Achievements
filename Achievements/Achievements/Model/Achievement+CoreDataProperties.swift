@@ -30,8 +30,28 @@ extension Achievement {
     @NSManaged public var tiers: NSSet?
 
     override class func create(with info: [String : AnyObject], inContext: NSManagedObjectContext) -> NSManagedObject? {
-        let achievement = ModelFactory.create(object: Constants.ObjectType.Achievement, with: info, in: inContext)
-        return achievement
+        let id = info[Constants.KEYs.Id] as! Int16
+        
+        let storedAchievements = Achievement.mr_findAll(with: NSPredicate(format: "id = %d",id), in: inContext) as? [Achievement]
+        
+        var achievement : Achievement?
+        if (storedAchievements != nil && storedAchievements!.isEmpty == false)
+        {
+            achievement = storedAchievements![0]
+        }
+        else
+        {
+            achievement = Achievement.mr_createEntity(in: inContext)
+        }
+        
+        achievement!.id = id
+        achievement!.name = info[Constants.KEYs.Name] as? String
+        achievement!.entityDescription = info[Constants.KEYs.Description] as? String
+        achievement!.icon = info[Constants.KEYs.Icon] as? String
+        achievement!.type = info[Constants.KEYs.TypeKey] as? String
+        achievement!.lockedText = info[Constants.KEYs.LockedText] as? String
+        
+        return achievement!
     }
 }
 

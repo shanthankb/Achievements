@@ -31,8 +31,31 @@ extension Group {
     }
     
     override class func create(with info: [String : AnyObject], inContext: NSManagedObjectContext) -> NSManagedObject? {
-        let group = ModelFactory.create(object: Constants.ObjectType.Group, with: info, in: inContext)
-        return group
+        let id = info[Constants.KEYs.Id] as! String
+        
+        let groups = Group.mr_findAll(with: NSPredicate(format: "id = %@",id), in: inContext) as? [Group]
+        
+        var group : Group?
+        if (groups != nil && groups!.isEmpty == false)
+        {
+            group = groups![0]
+        }
+        else
+        {
+            group = Group.mr_createEntity(in: inContext)
+        }
+        
+        group!.id = id
+        group!.name = info[Constants.KEYs.Name] as? String
+        group!.order = info[Constants.KEYs.Order] as! Int16
+        group!.entityDescription = info[Constants.KEYs.Description] as? String
+        
+        let groupCategories = info[Constants.KEYs.Categories]
+        //saving category ids as string
+        let categoryIDs = ((groupCategories as! [Int16]).map{String(describing: $0)}).joined(separator: ",")
+        group!.categoryIDs = categoryIDs
+        
+        return group!
     }
 
 }

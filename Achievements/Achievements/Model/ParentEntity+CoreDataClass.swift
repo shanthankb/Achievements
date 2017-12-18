@@ -9,6 +9,9 @@
 import Foundation
 import CoreData
 
+protocol FactoryProtocol {
+    static func create(with info: [String : AnyObject], inContext : NSManagedObjectContext) -> NSManagedObject?
+}
 
 public class ParentEntity: NSManagedObject {
 
